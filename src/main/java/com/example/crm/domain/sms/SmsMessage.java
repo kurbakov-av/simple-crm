@@ -45,7 +45,7 @@ public class SmsMessage {
 
     @NotNull
     @Enumerated(EnumType.STRING)
-    private SmsProvider provider;
+    private SmsProviderType provider;
 
     @ManyToOne(optional = false)
     private SmsOperator operator;
