@@ -15,6 +15,9 @@ import javax.validation.constraints.Pattern;
 public class Contact {
 
     @NotNull
+    private String contactName;
+
+    @NotNull
     @Enumerated(EnumType.STRING)
     private Type type;
 
