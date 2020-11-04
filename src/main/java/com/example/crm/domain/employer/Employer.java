@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Entity
@@ -21,6 +22,10 @@ public class Employer extends Catalog {
 
     @Embedded
     private Passport passport;
+
+    @NotNull
+    @Embedded
+    private Contact defaultContact;
 
     @ElementCollection
     @CollectionTable(name = "employer_contacts")
