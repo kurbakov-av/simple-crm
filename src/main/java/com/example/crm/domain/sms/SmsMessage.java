@@ -37,7 +37,7 @@ public class SmsMessage {
 
     @NotNull
     @Enumerated(EnumType.STRING)
-    private Status status;
+    private SmsMessageStatus status;
 
     private Date sendAt;
 
@@ -53,8 +53,4 @@ public class SmsMessage {
     @NotNull
     @PositiveOrZero
     private BigDecimal price;
-
-    public enum Status {
-        SEND, DELIVERED, UNDELIVERED, REJECT, CANCEL
-    }
 }
