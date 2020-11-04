@@ -15,3 +15,8 @@ spring:
       base-path: api
       return-body-on-create: true
       return-body-on-update: true
+  mail:
+    host:
+    username:
+    password:
+    protocol: smtp
