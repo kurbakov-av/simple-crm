@@ -9,10 +9,10 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "payments")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class Payment extends Document {
+public abstract class Payment extends Document {
 
     @ManyToOne(optional = false)
     private Document basisDocument;
