@@ -5,6 +5,7 @@ import com.example.crm.domain.sms.provider.SmsProviderRepository;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.stereotype.Component;
+import org.springframework.util.Assert;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.UUID;
@@ -22,6 +23,8 @@ public class RedSmsClient extends RestTemplate {
     private ClientHttpRequestInterceptor createAuthInterceptor() {
         return (httpRequest, bytes, clientHttpRequestExecution) -> {
             SmsProvider provider = smsProviderRepository.findByName("redsms");
+            Assert.notNull(provider, "Redsms provider is not created");
+
             String uuid = UUID.randomUUID().toString();
 
             HttpHeaders headers = httpRequest.getHeaders();
