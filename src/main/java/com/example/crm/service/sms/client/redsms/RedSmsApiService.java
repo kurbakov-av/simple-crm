@@ -84,6 +84,7 @@ public class RedSmsApiService implements SmsApiClientService {
         throw new RuntimeException("Body not exist");
     }
 
+    // TODO create mapper
     private SmsMessageStatus parseStatus(RedSmsMessageStatus status) {
         switch (status) {
             case PROGRESS:
