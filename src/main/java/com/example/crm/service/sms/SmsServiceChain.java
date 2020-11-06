@@ -21,10 +21,10 @@ public class SmsServiceChain {
             if (currentHandlerIndex < smsServices.length) {
                 return smsServices[currentHandlerIndex++].handle(providerType, params, this);
             } else {
-                throw new RuntimeException("Sms service handler not found");
+                throw new SmsServiceNotFoundException(providerType);
             }
         } catch (RuntimeException e) {
-            throw new RuntimeException("Can't send sms by provider" + providerType, e);
+            throw new SmsTransportException(providerType, e);
         }
     }
 }
