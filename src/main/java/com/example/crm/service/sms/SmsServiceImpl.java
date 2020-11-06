@@ -10,6 +10,7 @@ import com.example.crm.service.sms.client.SmsMessageDTO;
 import com.example.crm.service.sms.client.SmsSendParams;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.time.ZoneOffset;
@@ -29,6 +30,7 @@ public class SmsServiceImpl implements SmsService {
     private final SmsOperatorRepository smsOperatorRepository;
 
     @Override
+    @Transactional
     public void send(Contact contact, String text) {
         Exception lastException = null;
         List<SmsProvider> providers = smsProviderRepository.findAll();
