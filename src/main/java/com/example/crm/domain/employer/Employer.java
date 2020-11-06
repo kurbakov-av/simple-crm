@@ -6,12 +6,10 @@ import com.example.crm.domain.Passport;
 import com.example.crm.domain.department.Department;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Table(name = "employers")
@@ -35,8 +33,4 @@ public class Employer extends Catalog {
 
     @ManyToOne(optional = false)
     private Department department;
-
-    @ElementCollection(targetClass = Role.class)
-    @CollectionTable(name = "authorities")
-    private Set<GrantedAuthority> authorities;
 }
