@@ -1,8 +1,8 @@
 package com.example.crm.domain.employer;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.rest.core.annotation.RestResource;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-@RestResource(path = "employers")
+@RepositoryRestResource(path = "employers")
 public interface EmployerRepository extends JpaRepository<Employer, Long> {
 }

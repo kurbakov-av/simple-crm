@@ -1,8 +1,8 @@
 package com.example.crm.domain.partner.company;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.rest.core.annotation.RestResource;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-@RestResource(path = "companies")
+@RepositoryRestResource(path = "companies")
 public interface CompanyRepository extends JpaRepository<Company, Long> {
 }

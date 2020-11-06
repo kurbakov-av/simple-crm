@@ -1,8 +1,8 @@
 package com.example.crm.domain.task;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.rest.core.annotation.RestResource;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-@RestResource(path = "tasks")
+@RepositoryRestResource(path = "tasks")
 public interface TaskRepository extends JpaRepository<Task, Long> {
 }

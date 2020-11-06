@@ -1,8 +1,8 @@
 package com.example.crm.domain;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.rest.core.annotation.RestResource;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-@RestResource(path = "catalogs")
+@RepositoryRestResource(path = "catalogs")
 public interface CatalogRepository extends JpaRepository<Catalog, Long> {
 }

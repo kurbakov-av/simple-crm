@@ -1,8 +1,8 @@
 package com.example.crm.domain.order;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.rest.core.annotation.RestResource;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-@RestResource(path = "orders")
+@RepositoryRestResource(path = "orders")
 public interface OrderRepository extends JpaRepository<Order, Long> {
 }

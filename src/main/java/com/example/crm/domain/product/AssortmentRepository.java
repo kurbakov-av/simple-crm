@@ -1,8 +1,8 @@
 package com.example.crm.domain.product;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.rest.core.annotation.RestResource;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-@RestResource(path = "assortments")
+@RepositoryRestResource(path = "assortments")
 public interface AssortmentRepository extends JpaRepository<Assortment, Long> {
 }
