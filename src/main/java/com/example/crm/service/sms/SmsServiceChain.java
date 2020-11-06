@@ -18,7 +18,7 @@ public class SmsServiceChain {
 
     public SmsMessageDTO doSend(SmsProviderType providerType, SmsSendParams params) {
         try {
-            if (smsServices.length < currentHandlerIndex) {
+            if (currentHandlerIndex < smsServices.length) {
                 return smsServices[currentHandlerIndex++].handle(providerType, params, this);
             } else {
                 throw new RuntimeException("Sms service handler not found");
