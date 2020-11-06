@@ -1,4 +1,4 @@
-package com.example.crm.service.sms.redsms;
+package com.example.crm.service.sms.client.redsms;
 
 import com.example.crm.domain.sms.provider.SmsProvider;
 import com.example.crm.domain.sms.provider.SmsProviderRepository;

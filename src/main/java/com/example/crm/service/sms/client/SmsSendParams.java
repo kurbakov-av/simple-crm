@@ -1,4 +1,4 @@
-package com.example.crm.service.sms;
+package com.example.crm.service.sms.client;
 
 import lombok.Builder;
 import lombok.Data;

@@ -1,4 +1,4 @@
-package com.example.crm.service.sms;
+package com.example.crm.service.sms.client;
 
 import com.example.crm.domain.sms.SmsMessageStatus;
 import com.example.crm.domain.sms.SmsProviderType;

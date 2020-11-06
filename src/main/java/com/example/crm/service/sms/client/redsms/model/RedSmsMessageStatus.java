@@ -1,6 +1,6 @@
-package com.example.crm.service.sms.redsms.model;
+package com.example.crm.service.sms.client.redsms.model;
 
-import com.example.crm.service.sms.StatusDescription;
+import com.example.crm.service.sms.client.StatusDescription;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 

@@ -1,14 +1,14 @@
-package com.example.crm.service.sms.redsms;
+package com.example.crm.service.sms.client.redsms;
 
 import com.example.crm.domain.sms.SmsMessageStatus;
-import com.example.crm.service.sms.SmsMessageDTO;
-import com.example.crm.service.sms.SmsSendParams;
-import com.example.crm.service.sms.SmsService;
-import com.example.crm.service.sms.redsms.model.RedSmsInfoMessageResponse;
-import com.example.crm.service.sms.redsms.model.RedSmsMessage;
-import com.example.crm.service.sms.redsms.model.RedSmsMessageStatus;
-import com.example.crm.service.sms.redsms.model.RedSmsSendMessageResponse;
-import org.springframework.beans.factory.annotation.Qualifier;
+import com.example.crm.service.sms.client.SmsApiClientService;
+import com.example.crm.service.sms.client.SmsMessageDTO;
+import com.example.crm.service.sms.client.SmsSendParams;
+import com.example.crm.service.sms.client.redsms.model.RedSmsInfoMessageResponse;
+import com.example.crm.service.sms.client.redsms.model.RedSmsMessage;
+import com.example.crm.service.sms.client.redsms.model.RedSmsMessageStatus;
+import com.example.crm.service.sms.client.redsms.model.RedSmsSendMessageResponse;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestOperations;
@@ -19,21 +19,18 @@ import java.util.List;
 import java.util.Map;
 
 @Service
-public class RedSmsService implements SmsService {
+@RequiredArgsConstructor
+public class RedSmsApiService implements SmsApiClientService {
 
     private final RestOperations redsmsClient;
 
-    public RedSmsService(@Qualifier("redSmsClient") RestOperations redsmsClient) {
-        this.redsmsClient = redsmsClient;
-    }
-
     @Override
-    public SmsMessageDTO send(String phone, SmsSendParams params) {
+    public SmsMessageDTO send(SmsSendParams params) {
         Map<String, String> paramMap = new LinkedHashMap<>();
         paramMap.put("route", "sms");
         paramMap.put("from", params.getSender());
         paramMap.put("text", params.getText());
-        paramMap.put("to", phone);
+        paramMap.put("to", params.getPhones().get(0));
 
         if (Boolean.TRUE.equals(params.getConvertToTransliteration())) {
             paramMap.put("translit ", "");

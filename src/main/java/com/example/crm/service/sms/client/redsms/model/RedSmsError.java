@@ -1,4 +1,4 @@
-package com.example.crm.service.sms.redsms.model;
+package com.example.crm.service.sms.client.redsms.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
