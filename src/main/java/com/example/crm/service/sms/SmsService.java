@@ -1,7 +1,7 @@
 package com.example.crm.service.sms;
 
-public interface SmsService {
-    SmsMessageDTO send(String phone, SmsSendParams params);
+import com.example.crm.domain.Contact;
 
-    SmsMessageDTO info(String uuid);
+public interface SmsService {
+    void send(Contact contact, String text);
 }
