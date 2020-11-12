@@ -20,7 +20,7 @@ public abstract class Catalog {
     private Long id;
 
     @NotNull
-    @Length(min = 3)
+    @Length(min = 1)
     private String name;
 
     private boolean archived;
